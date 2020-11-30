@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Loyality Management System" id="Project_35a9d9f" template="Default" database="MySql" >
+	<schema name="loyality management system" schemaname="loyality management system" >
+		<table name="accounts" >
+			<column name="account_id" type="int" jt="4" mandatory="y" />
+			<column name="user_id" type="int" jt="4" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="short_name" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="add_by" type="varchar" length="100" jt="12" />
+			<column name="add_date" type="date" jt="91" />
+			<column name="edit_by" type="varchar" length="100" jt="12" />
+			<column name="edit_date" type="date" jt="91" />
+			<column name="status" type="varchar" length="100" jt="12" />
+			<column name="flag" type="bit" jt="-7" />
+			<index name="pk_accounts_account_id" unique="PRIMARY_KEY" >
+				<column name="account_id" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="area" >
+			<column name="area_id" type="int" jt="4" mandatory="y" />
+			<column name="title" type="int" jt="4" />
+			<column name="shortname" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="country_id" type="int" length="2" jt="4" />
+			<column name="state_id" type="int" jt="4" />
+			<column name="city_id" type="int" jt="4" />
+			<column name="add_by" type="varchar" length="100" jt="12" />
+			<column name="editby" type="varchar" length="100" jt="12" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="100" jt="12" />
+			<column name="flag" type="bit" jt="-7" />
+			<index name="pk_area_area_id" unique="PRIMARY_KEY" >
+				<column name="area_id" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="banch" >
+			<column name="branch_id" type="int" jt="4" mandatory="y" />
+			<column name="organization_id" type="int" jt="4" />
+			<column name="user_id" type="int" jt="4" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="add_date" type="date" jt="91" />
+			<column name="edit_date" type="date" jt="91" />
+			<column name="add_by" type="varchar" length="100" jt="12" />
+			<column name="edit_by" type="varchar" length="100" jt="12" />
+			<column name="status" type="bit" length="1" jt="-7" />
+			<column name="flag" type="bit" jt="-7" />
+			<index name="pk_banch_branch_id" unique="PRIMARY_KEY" >
+				<column name="branch_id" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="city" >
+			<column name="city_id" type="int" jt="4" mandatory="y" />
+			<column name="country_id" type="int" length="2" jt="4" />
+			<column name="state_id" type="int" jt="4" />
+			<column name="user_id" type="int" jt="4" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="add_date" type="date" jt="91" />
+			<column name="edit_date" type="date" jt="91" />
+			<column name="add_by" type="varchar" length="100" jt="12" />
+			<column name="edit_by" type="varchar" length="100" jt="12" />
+			<column name="status" type="varchar" length="100" jt="12" />
+			<column name="flag" type="bit" jt="-7" />
+			<index name="pk_city_city_id" unique="PRIMARY_KEY" >
+				<column name="city_id" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="country" >
+			<column name="country_id" type="int" length="2" jt="4" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="user_id" type="int" jt="4" />
+			<column name="add_date" type="date" jt="91" />
+			<column name="edit_date" type="date" jt="91" />
+			<column name="add_by" type="varchar" length="100" jt="12" />
+			<column name="edit_by" type="varchar" length="100" jt="12" />
+			<column name="status" type="varchar" length="100" jt="12" />
+			<column name="flag" type="bit" jt="-7" />
+			<index name="pk_country_country_id" unique="PRIMARY_KEY" >
+				<column name="country_id" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="orgainization" >
+			<column name="organization_id" type="int" jt="4" mandatory="y" />
+			<column name="user_id" type="int" jt="4" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="add_date" type="date" jt="91" />
+			<column name="add_by" type="varchar" length="100" jt="12" />
+			<column name="edit_date" type="date" jt="91" />
+			<column name="edit_by" type="varchar" length="100" jt="12" />
+			<column name="status" type="varchar" length="100" jt="12" />
+			<column name="flag" type="bit" jt="-7" />
+			<index name="pk_orgainization_organization_id" unique="PRIMARY_KEY" >
+				<column name="organization_id" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="state" >
+			<column name="state_id" type="int" jt="4" mandatory="y" />
+			<column name="country_id" type="int" length="2" jt="4" />
+			<column name="user_id" type="int" jt="4" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="add_date" type="date" jt="91" />
+			<column name="edit_date" type="date" jt="91" />
+			<column name="add_by" type="varchar" length="100" jt="12" />
+			<column name="edit_by" type="varchar" length="100" jt="12" />
+			<column name="flag" type="bit" jt="-7" />
+			<index name="pk_state_state_id" unique="PRIMARY_KEY" >
+				<column name="state_id" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="users" >
+			<column name="user_id" type="int" jt="4" mandatory="y" />
+			<column name="first_name" type="varchar" length="100" jt="12" />
+			<column name="last_name" type="varchar" length="100" jt="12" />
+			<column name="father_name" type="varchar" length="100" jt="12" />
+			<column name="cnic" type="varchar" length="100" jt="12" />
+			<column name="dob" type="date" length="100" jt="91" />
+			<column name="email" type="varchar" length="100" jt="12" />
+			<column name="password" type="varchar" length="100" jt="12" />
+			<column name="account_id" type="int" jt="4" />
+			<column name="organization_id" type="int" jt="4" />
+			<column name="branch_id" type="int" jt="4" />
+			<column name="country_id" type="int" length="2" jt="4" />
+			<column name="state_id" type="int" jt="4" />
+			<column name="city_id" type="int" jt="4" />
+			<column name="area_id" type="int" jt="4" />
+			<column name="phone" type="varchar" length="100" jt="12" />
+			<column name="contact" type="varchar" length="100" jt="12" />
+			<column name="addby" type="varchar" length="100" jt="12" />
+			<column name="add_date" type="date" jt="91" />
+			<column name="editby" type="varchar" length="100" jt="12" />
+			<column name="edit_date" type="date" jt="91" />
+			<column name="timestamp" type="datetime" jt="93" />
+			<column name="status" type="varchar" length="100" jt="12" />
+			<column name="flag" type="bit" jt="-7" />
+			<index name="pk_users_user_id" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout_2fae412" show_relation="columns" >
+		<entity schema="loyality management system" name="users" color="C1D8EE" x="48" y="48" />
+		<entity schema="loyality management system" name="accounts" color="C1D8EE" x="224" y="48" />
+		<entity schema="loyality management system" name="orgainization" color="C1D8EE" x="400" y="48" />
+		<entity schema="loyality management system" name="banch" color="C1D8EE" x="640" y="48" />
+		<entity schema="loyality management system" name="area" color="C1D8EE" x="640" y="336" />
+		<entity schema="loyality management system" name="city" color="C1D8EE" x="496" y="336" />
+		<entity schema="loyality management system" name="state" color="C1D8EE" x="352" y="352" />
+		<entity schema="loyality management system" name="country" color="C1D8EE" x="208" y="336" />
+	</layout>
+</project>
